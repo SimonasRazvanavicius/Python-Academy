@@ -54,4 +54,54 @@ else:
 
 # ----- End of sub-module ------#
 
+# -- MOD04_1-6.2_Intro_Python --#
+
+# [Task 1]
+# Task 1
+# Format using backslash (\) escape sequences
+# [ ] print "\\\WARNING!///"
+print("\"\\\\\\WARNING!///\"")
+
+# [ ] print output that is exactly (with quotes): "What's that?" isn't a specific question.
+print("\"What\'s that?\" isn\'t a specific question.")
+
+# [ ] from 1 print statement output the text commented below using no spaces
+# One     Two     Three
+# Four    Five    Six
+print("One\tTwo\tThree\nFour\tFive\tSix")
+
+# [Task 2]
+
+# Program: pre_word() Function
+# Function has a single string parameter that it checks s is a single word starting with "pre"
+
+# --> Check if word starts with "pre"
+# --> Check if word .isalpha()
+# --> if all checks pass: return True
+# --> if any checks fail: return False
+# --> Test
+# --> --> get input using the directions: *enter a word that starts with "pre": *
+# --> --> call pre_word() with the input string
+# --> --> test if return value is False and print message explaining not a "pre" word
+# --> --> else print message explaining is a valid "pre" word
+# [ ] create and test pre_word()
+
+def pre_word(string_input):
+    if string_input.lower().startswith("pre"):
+        check1 = True
+    else:
+        check = False
+    if string_input.lower().isalpha():
+        check2 = True
+    else:
+        check2 = False
+    return check1 and check2
+
+# [Task 5]
+Fix the Errors
+# [ ] review, run, fix
+print("Hello\nWorld!")
+
+# ----- End of sub-module ------#
+
 # ------- End of module --------#

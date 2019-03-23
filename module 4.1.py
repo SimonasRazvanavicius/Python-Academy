@@ -125,7 +125,139 @@ print("\"That\'s how we escape!\"")
 print("1\tone\n22\ttwo\n333\tthree")
 
 # [Task 4]
+# Program: quote_me() Function
+# quote_me takes a string argument and returns a string that will display surrounded with added double quotes if printed
 
+# --> check if passed string starts with a double quote ("\""), then surround string with single quotations
+# --> if the passed string starts with single quote, or if doesn't start with a quotation mark, then surround with double quotations
+# Test the function code passing string input as the argument to quote_me()
+
+# [ ] create and test quote_me()
+test_string = input("Please enter a test string: ")
+
+def quote_me(string_input):
+    if string_input.lower().startswith("\""):
+        print("\'" + test_string + "\'")
+    else:
+        print("\"" + test_string + "\"")
+
+quote_me(test_string)
+
+# [Task 5]
+
+# Program: shirt order
+# First get input for color and size
+# 
+# --> White has sizes L, M
+# --> Blue has sizes M, S
+
+# print available or unavailable, then
+# print the order confirmation of color and size
+# 
+# * hint: set a variable "available = False" before nested if statements and
+# change to True if color and size are avaliable*
+# [ ] create shirt order using nested if 
+
+t_color_availability = False
+
+while not t_color_availability:
+    t_color = input("Select color of a T-Shirt: ")
+    if t_color.lower() == "white" or t_color.lower() == "blue" or t_color.lower() == "cancel":
+        if t_color.lower() == "white" or t_color.lower() == "blue":
+            t_color_availability = True
+        else:
+            print("Your order was cancelled!")
+            break
+    else:
+        print()
+        print("Please select another color. Right now we have only white and blue colors available! Type 'cancel' if you wish to stop your order")
+
+t_size_availability = False
+while not t_size_availability and t_color_availability:
+    t_size = input("Select size of a T-Shirt: ")
+    if (t_color.lower() == "white" and (t_size.lower() == "l" or t_size.lower() == "m")) or (t_color.lower() == "blue" and (t_size.lower() == "m" or t_size.lower() == "s")) or (t_size.lower() == "cancel"):
+        if t_size.lower() != "cancel":
+            t_size_availability = True
+            print("Your order was complete!\nYou just bought " + t_color.title() + " t-shit (size: " + t_size.title() + ")")
+        else:
+            print("Your order was cancelled!")
+            break
+    else:
+        if t_color.lower() == "white":
+            print()
+            print("Please select another size. Right now we have only L and M sizes for white t-shirt available! Type 'cancel' if you wish to stop your order")
+        if t_color.lower() == "blue":
+            print()
+            print("Please select another size. Right now we have only M and S sizes for blue t-shirt available! Type 'cancel' if you wish to stop your order")
+
+# [Task 6]
+# Program: str_analysis() Function
+# Create the str_analysis() function that takes a string argument. In the body of the function:
+
+# --> Check if string is digits
+# --> --> if digits: convert to int and check if greater than 99
+# --> --> --> if greater than 99, print a message about a "big number"
+# --> --> --> if not greater than 99, print message about "small number"
+# --> --> if not digits: check if string isalpha
+# --> --> --> if isalpha print message about being all alpha
+# --> --> --> if not isalpha print a message about being neither all alpha nor all digit
+# call the function with a string from user input
+
+# [ ] create and test str_analysis()
+string_input = input("Enter a string or a number: ")
+
+def str_analysis(str_input):
+    if str_input.isnumeric():
+        int_number = int(str_input)
+        if int_number > 99:
+            print("Big number!")
+        else:
+            print("Small number!")
+    elif str_input.isalpha():
+        print("String is all alpha!")
+    else:
+        print("Sring (", str_input, ") is neither all alpha nor all digit!")
+        
+str_analysis(string_input)
+
+# [Task 7]
+# Program: ticket_check() - finds out if a seat is available
+# Call ticket_check() function with 2 arguments: section and seats requested and return True or False
+
+# --> section is a string and expects: general, floor
+# --> seats is an integer and expects: 1 - 10
+# Check for valid section and seats
+
+# --> if section is general (or use startswith "g")
+# --> --> if seats is 1-10 return True
+# --> if section is floor (or use starts with "f")
+# --> --> if seats is 1-4 return True
+# otherwise return False
+
+# [ ] create and call ticket_check()
+# [ ] create and call ticket_check()
+section = input("Enter the section: ")
+seats = input("Enter the seat number: ")
+
+def ticket_check(section, seats):
+    seats_boolean = True
+    section_boolean = True
+    if section.lower() != "general" and section.lower() != "floor":
+        print("Section is invalid!")
+        section_boolean = False
+    seats_array = ['1','2','3','4','5','6','7','8','9','10']
+    seats_array2 = ['1','2','3','4']
+    if not seats in seats_array:
+        print("Seat is invalid!")
+        seats_boolean = False
+    if seats_boolean and section_boolean:
+        if section.lower() == "floor" and not seats in seats_array2:
+            print("Seat (" + seats + ") is not available in floor section")
+        else:
+            print("Seat (" + seats + ") is available in " + section + " section!")
+    return seats_boolean and section_boolean
+
+ticket_check(section, seats)
 
 # ----- End of sub-module ------#
 

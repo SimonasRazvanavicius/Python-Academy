@@ -1,6 +1,5 @@
 # --------- MODULE 1: --------- #
 
-
 # -- MOD01_1-1.1_Intro_Python --#
 
 # [Task 1]
@@ -20,8 +19,6 @@ print("after edit, save!")
 print("Ctrl + s")
 
 # ----- End of sub-module ------#
-
-
 
 # -- MOD01_1-1.2_Intro_Python --#
 

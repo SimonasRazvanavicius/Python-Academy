@@ -294,8 +294,26 @@ quiz_item(question3,solution3)
 
 # Module 4 Required Coding Activity
 # Program: str_analysis() Function
+# [ ] create, call and test the str_analysis() function  
+# then PASTE THIS CODE into edX 
 
+string_input = ""
+while string_input == "":
+    string_input = input("Enter string argument: ")
 
+def str_analysis(str_input):
+    if str_input.isnumeric():
+        int_number = int(str_input)
+        if int_number > 99:
+            print(int_number, "is a pretty big number!")
+        else:
+            print(int_number, "is a smaller number than expected!")
+    elif str_input.isalpha():
+        print("\"" + str_input + "\" is all alphabetical characters!")
+    else:
+        print("\"" + str_input + "\" is neither all alpha nor all digit!")
+        
+str_analysis(string_input)
 
 # ----- End of sub-module ------#
 
